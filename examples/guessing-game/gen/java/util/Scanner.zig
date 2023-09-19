@@ -362,12 +362,12 @@ pub const Scanner = opaque {
     pub fn @"get_buf_Ljava/nio/CharBuffer;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"buf_Ljava/nio/CharBuffer;");
+        return env.getField(.object, @ptrCast(self), fields.@"buf_Ljava/nio/CharBuffer;");
     }
     pub fn @"set_buf_Ljava/nio/CharBuffer;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"buf_Ljava/nio/CharBuffer;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"buf_Ljava/nio/CharBuffer;", arg);
     }
     pub fn @"get_BUFFER_SIZE_I"(env: *jui.JNIEnv) !jui.jint {
         try load(env);
@@ -377,202 +377,202 @@ pub const Scanner = opaque {
     pub fn @"get_position_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"position_I");
+        return env.getField(.int, @ptrCast(self), fields.@"position_I");
     }
     pub fn @"set_position_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"position_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"position_I", arg);
     }
     pub fn @"get_matcher_Ljava/util/regex/Matcher;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"matcher_Ljava/util/regex/Matcher;");
+        return env.getField(.object, @ptrCast(self), fields.@"matcher_Ljava/util/regex/Matcher;");
     }
     pub fn @"set_matcher_Ljava/util/regex/Matcher;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"matcher_Ljava/util/regex/Matcher;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"matcher_Ljava/util/regex/Matcher;", arg);
     }
     pub fn @"get_delimPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"delimPattern_Ljava/util/regex/Pattern;");
+        return env.getField(.object, @ptrCast(self), fields.@"delimPattern_Ljava/util/regex/Pattern;");
     }
     pub fn @"set_delimPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"delimPattern_Ljava/util/regex/Pattern;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"delimPattern_Ljava/util/regex/Pattern;", arg);
     }
     pub fn @"get_hasNextPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"hasNextPattern_Ljava/util/regex/Pattern;");
+        return env.getField(.object, @ptrCast(self), fields.@"hasNextPattern_Ljava/util/regex/Pattern;");
     }
     pub fn @"set_hasNextPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"hasNextPattern_Ljava/util/regex/Pattern;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"hasNextPattern_Ljava/util/regex/Pattern;", arg);
     }
     pub fn @"get_hasNextPosition_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"hasNextPosition_I");
+        return env.getField(.int, @ptrCast(self), fields.@"hasNextPosition_I");
     }
     pub fn @"set_hasNextPosition_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"hasNextPosition_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"hasNextPosition_I", arg);
     }
     pub fn @"get_hasNextResult_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"hasNextResult_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"hasNextResult_Ljava/lang/String;");
     }
     pub fn @"set_hasNextResult_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"hasNextResult_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"hasNextResult_Ljava/lang/String;", arg);
     }
     pub fn @"get_source_Ljava/lang/Readable;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"source_Ljava/lang/Readable;");
+        return env.getField(.object, @ptrCast(self), fields.@"source_Ljava/lang/Readable;");
     }
     pub fn @"set_source_Ljava/lang/Readable;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"source_Ljava/lang/Readable;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"source_Ljava/lang/Readable;", arg);
     }
     pub fn @"get_sourceClosed_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"sourceClosed_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"sourceClosed_Z");
     }
     pub fn @"set_sourceClosed_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"sourceClosed_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"sourceClosed_Z", arg);
     }
     pub fn @"get_needInput_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"needInput_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"needInput_Z");
     }
     pub fn @"set_needInput_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"needInput_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"needInput_Z", arg);
     }
     pub fn @"get_skipped_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"skipped_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"skipped_Z");
     }
     pub fn @"set_skipped_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"skipped_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"skipped_Z", arg);
     }
     pub fn @"get_savedScannerPosition_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"savedScannerPosition_I");
+        return env.getField(.int, @ptrCast(self), fields.@"savedScannerPosition_I");
     }
     pub fn @"set_savedScannerPosition_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"savedScannerPosition_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"savedScannerPosition_I", arg);
     }
     pub fn @"get_typeCache_Ljava/lang/Object;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"typeCache_Ljava/lang/Object;");
+        return env.getField(.object, @ptrCast(self), fields.@"typeCache_Ljava/lang/Object;");
     }
     pub fn @"set_typeCache_Ljava/lang/Object;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"typeCache_Ljava/lang/Object;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"typeCache_Ljava/lang/Object;", arg);
     }
     pub fn @"get_matchValid_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"matchValid_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"matchValid_Z");
     }
     pub fn @"set_matchValid_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"matchValid_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"matchValid_Z", arg);
     }
     pub fn @"get_closed_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"closed_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"closed_Z");
     }
     pub fn @"set_closed_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"closed_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"closed_Z", arg);
     }
     pub fn @"get_radix_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"radix_I");
+        return env.getField(.int, @ptrCast(self), fields.@"radix_I");
     }
     pub fn @"set_radix_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"radix_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"radix_I", arg);
     }
     pub fn @"get_defaultRadix_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"defaultRadix_I");
+        return env.getField(.int, @ptrCast(self), fields.@"defaultRadix_I");
     }
     pub fn @"set_defaultRadix_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"defaultRadix_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"defaultRadix_I", arg);
     }
     pub fn @"get_locale_Ljava/util/Locale;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"locale_Ljava/util/Locale;");
+        return env.getField(.object, @ptrCast(self), fields.@"locale_Ljava/util/Locale;");
     }
     pub fn @"set_locale_Ljava/util/Locale;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"locale_Ljava/util/Locale;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"locale_Ljava/util/Locale;", arg);
     }
     pub fn @"get_patternCache_Ljava/util/Scanner$PatternLRUCache;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"patternCache_Ljava/util/Scanner$PatternLRUCache;");
+        return env.getField(.object, @ptrCast(self), fields.@"patternCache_Ljava/util/Scanner$PatternLRUCache;");
     }
     pub fn @"set_patternCache_Ljava/util/Scanner$PatternLRUCache;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"patternCache_Ljava/util/Scanner$PatternLRUCache;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"patternCache_Ljava/util/Scanner$PatternLRUCache;", arg);
     }
     pub fn @"get_lastException_Ljava/io/IOException;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"lastException_Ljava/io/IOException;");
+        return env.getField(.object, @ptrCast(self), fields.@"lastException_Ljava/io/IOException;");
     }
     pub fn @"set_lastException_Ljava/io/IOException;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"lastException_Ljava/io/IOException;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"lastException_Ljava/io/IOException;", arg);
     }
     pub fn @"get_modCount_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"modCount_I");
+        return env.getField(.int, @ptrCast(self), fields.@"modCount_I");
     }
     pub fn @"set_modCount_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"modCount_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"modCount_I", arg);
     }
     pub fn @"get_WHITESPACE_PATTERN_Ljava/util/regex/Pattern;"(env: *jui.JNIEnv) !jui.jobject {
         try load(env);
@@ -607,82 +607,82 @@ pub const Scanner = opaque {
     pub fn @"get_groupSeparator_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"groupSeparator_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"groupSeparator_Ljava/lang/String;");
     }
     pub fn @"set_groupSeparator_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"groupSeparator_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"groupSeparator_Ljava/lang/String;", arg);
     }
     pub fn @"get_decimalSeparator_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"decimalSeparator_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"decimalSeparator_Ljava/lang/String;");
     }
     pub fn @"set_decimalSeparator_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"decimalSeparator_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"decimalSeparator_Ljava/lang/String;", arg);
     }
     pub fn @"get_nanString_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"nanString_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"nanString_Ljava/lang/String;");
     }
     pub fn @"set_nanString_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"nanString_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"nanString_Ljava/lang/String;", arg);
     }
     pub fn @"get_infinityString_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"infinityString_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"infinityString_Ljava/lang/String;");
     }
     pub fn @"set_infinityString_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"infinityString_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"infinityString_Ljava/lang/String;", arg);
     }
     pub fn @"get_positivePrefix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"positivePrefix_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"positivePrefix_Ljava/lang/String;");
     }
     pub fn @"set_positivePrefix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"positivePrefix_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"positivePrefix_Ljava/lang/String;", arg);
     }
     pub fn @"get_negativePrefix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"negativePrefix_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"negativePrefix_Ljava/lang/String;");
     }
     pub fn @"set_negativePrefix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"negativePrefix_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"negativePrefix_Ljava/lang/String;", arg);
     }
     pub fn @"get_positiveSuffix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"positiveSuffix_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"positiveSuffix_Ljava/lang/String;");
     }
     pub fn @"set_positiveSuffix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"positiveSuffix_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"positiveSuffix_Ljava/lang/String;", arg);
     }
     pub fn @"get_negativeSuffix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"negativeSuffix_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"negativeSuffix_Ljava/lang/String;");
     }
     pub fn @"set_negativeSuffix_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"negativeSuffix_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"negativeSuffix_Ljava/lang/String;", arg);
     }
     pub fn @"get_boolPattern_Ljava/util/regex/Pattern;"(env: *jui.JNIEnv) !jui.jobject {
         try load(env);
@@ -702,42 +702,42 @@ pub const Scanner = opaque {
     pub fn @"get_integerPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"integerPattern_Ljava/util/regex/Pattern;");
+        return env.getField(.object, @ptrCast(self), fields.@"integerPattern_Ljava/util/regex/Pattern;");
     }
     pub fn @"set_integerPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"integerPattern_Ljava/util/regex/Pattern;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"integerPattern_Ljava/util/regex/Pattern;", arg);
     }
     pub fn @"get_digits_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"digits_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"digits_Ljava/lang/String;");
     }
     pub fn @"set_digits_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"digits_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"digits_Ljava/lang/String;", arg);
     }
     pub fn @"get_non0Digit_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"non0Digit_Ljava/lang/String;");
+        return env.getField(.object, @ptrCast(self), fields.@"non0Digit_Ljava/lang/String;");
     }
     pub fn @"set_non0Digit_Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"non0Digit_Ljava/lang/String;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"non0Digit_Ljava/lang/String;", arg);
     }
     pub fn @"get_SIMPLE_GROUP_INDEX_I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.int, @ptrCast(jui.jobject, self), fields.@"SIMPLE_GROUP_INDEX_I");
+        return env.getField(.int, @ptrCast(self), fields.@"SIMPLE_GROUP_INDEX_I");
     }
     pub fn @"set_SIMPLE_GROUP_INDEX_I"(self: *@This(), env: *jui.JNIEnv, arg: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.int, @ptrCast(jui.jobject, self), fields.@"SIMPLE_GROUP_INDEX_I", arg);
+        try env.callField(.int, @ptrCast(self), fields.@"SIMPLE_GROUP_INDEX_I", arg);
     }
     pub fn @"get_separatorPattern_Ljava/util/regex/Pattern;"(env: *jui.JNIEnv) !jui.jobject {
         try load(env);
@@ -772,22 +772,22 @@ pub const Scanner = opaque {
     pub fn @"get_floatPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"floatPattern_Ljava/util/regex/Pattern;");
+        return env.getField(.object, @ptrCast(self), fields.@"floatPattern_Ljava/util/regex/Pattern;");
     }
     pub fn @"set_floatPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"floatPattern_Ljava/util/regex/Pattern;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"floatPattern_Ljava/util/regex/Pattern;", arg);
     }
     pub fn @"get_decimalPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"decimalPattern_Ljava/util/regex/Pattern;");
+        return env.getField(.object, @ptrCast(self), fields.@"decimalPattern_Ljava/util/regex/Pattern;");
     }
     pub fn @"set_decimalPattern_Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"decimalPattern_Ljava/util/regex/Pattern;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"decimalPattern_Ljava/util/regex/Pattern;", arg);
     }
     pub fn @"get_$assertionsDisabled_Z"(env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
@@ -802,12 +802,12 @@ pub const Scanner = opaque {
     pub fn @"buildIntegerPatternString()Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"buildIntegerPatternString()Ljava/lang/String;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"buildIntegerPatternString()Ljava/lang/String;", null);
     }
     pub fn @"integerPattern()Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"integerPattern()Ljava/util/regex/Pattern;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"integerPattern()Ljava/util/regex/Pattern;", null);
     }
     pub fn @"separatorPattern()Ljava/util/regex/Pattern;"(env: *jui.JNIEnv) !jui.jobject {
         try load(env);
@@ -822,42 +822,42 @@ pub const Scanner = opaque {
     pub fn @"buildFloatAndDecimalPattern()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"buildFloatAndDecimalPattern()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"buildFloatAndDecimalPattern()V", null);
     }
     pub fn @"floatPattern()Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"floatPattern()Ljava/util/regex/Pattern;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"floatPattern()Ljava/util/regex/Pattern;", null);
     }
     pub fn @"decimalPattern()Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"decimalPattern()Ljava/util/regex/Pattern;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"decimalPattern()Ljava/util/regex/Pattern;", null);
     }
     pub fn @"<init>(Ljava/lang/Readable;Ljava/util/regex/Pattern;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/lang/Readable;Ljava/util/regex/Pattern;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/lang/Readable;Ljava/util/regex/Pattern;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/lang/Readable;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/lang/Readable;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/lang/Readable;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/io/InputStream;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/InputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/InputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/io/InputStream;Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/InputStream;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/InputStream;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"toCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;"(env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
@@ -877,22 +877,22 @@ pub const Scanner = opaque {
     pub fn @"<init>(Ljava/io/File;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/io/File;Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/io/File;Ljava/nio/charset/CharsetDecoder;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/nio/charset/CharsetDecoder;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/nio/charset/CharsetDecoder;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"toDecoder(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder;"(env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
@@ -912,27 +912,27 @@ pub const Scanner = opaque {
     pub fn @"<init>(Ljava/nio/file/Path;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/nio/file/Path;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/nio/file/Path;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/nio/file/Path;Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/nio/file/Path;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/nio/file/Path;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/nio/channels/ReadableByteChannel;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/nio/channels/ReadableByteChannel;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/nio/channels/ReadableByteChannel;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"makeReadable(Ljava/nio/channels/ReadableByteChannel;)Ljava/lang/Readable;"(env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
@@ -942,407 +942,407 @@ pub const Scanner = opaque {
     pub fn @"<init>(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"saveState()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"saveState()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"saveState()V", null);
     }
     pub fn @"revertState()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"revertState()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"revertState()V", null);
     }
     pub fn @"revertState(Z)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jboolean) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"revertState(Z)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"revertState(Z)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"cacheResult()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"cacheResult()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"cacheResult()V", null);
     }
     pub fn @"cacheResult(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"cacheResult(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"cacheResult(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"clearCaches()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"clearCaches()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"clearCaches()V", null);
     }
     pub fn @"getCachedResult()Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"getCachedResult()Ljava/lang/String;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"getCachedResult()Ljava/lang/String;", null);
     }
     pub fn @"useTypeCache()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"useTypeCache()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"useTypeCache()V", null);
     }
     pub fn @"readInput()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"readInput()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"readInput()V", null);
     }
     pub fn @"makeSpace()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"makeSpace()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"makeSpace()Z", null);
     }
     pub fn @"translateSavedIndexes(I)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"translateSavedIndexes(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"translateSavedIndexes(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"throwFor()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"throwFor()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"throwFor()V", null);
     }
     pub fn @"hasTokenInBuffer()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasTokenInBuffer()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasTokenInBuffer()Z", null);
     }
     pub fn @"getCompleteTokenInBuffer(Ljava/util/regex/Pattern;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"getCompleteTokenInBuffer(Ljava/util/regex/Pattern;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"getCompleteTokenInBuffer(Ljava/util/regex/Pattern;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"findPatternInBuffer(Ljava/util/regex/Pattern;I)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jint) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"findPatternInBuffer(Ljava/util/regex/Pattern;I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"findPatternInBuffer(Ljava/util/regex/Pattern;I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
     }
     pub fn @"matchPatternInBuffer(Ljava/util/regex/Pattern;)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"matchPatternInBuffer(Ljava/util/regex/Pattern;)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"matchPatternInBuffer(Ljava/util/regex/Pattern;)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"ensureOpen()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"ensureOpen()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"ensureOpen()V", null);
     }
     pub fn @"close()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"close()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"close()V", null);
     }
     pub fn @"ioException()Ljava/io/IOException;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"ioException()Ljava/io/IOException;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"ioException()Ljava/io/IOException;", null);
     }
     pub fn @"delimiter()Ljava/util/regex/Pattern;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"delimiter()Ljava/util/regex/Pattern;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"delimiter()Ljava/util/regex/Pattern;", null);
     }
     pub fn @"useDelimiter(Ljava/util/regex/Pattern;)Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"useDelimiter(Ljava/util/regex/Pattern;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"useDelimiter(Ljava/util/regex/Pattern;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"useDelimiter(Ljava/lang/String;)Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"useDelimiter(Ljava/lang/String;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"useDelimiter(Ljava/lang/String;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"locale()Ljava/util/Locale;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"locale()Ljava/util/Locale;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"locale()Ljava/util/Locale;", null);
     }
     pub fn @"useLocale(Ljava/util/Locale;)Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"useLocale(Ljava/util/Locale;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"useLocale(Ljava/util/Locale;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"radix()I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.int, @ptrCast(jui.jobject, self), methods.@"radix()I", null);
+        return env.callMethod(.int, @ptrCast(self), methods.@"radix()I", null);
     }
     pub fn @"useRadix(I)Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"useRadix(I)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"useRadix(I)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"setRadix(I)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"setRadix(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"setRadix(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"match()Ljava/util/regex/MatchResult;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"match()Ljava/util/regex/MatchResult;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"match()Ljava/util/regex/MatchResult;", null);
     }
     pub fn @"toString()Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"toString()Ljava/lang/String;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"toString()Ljava/lang/String;", null);
     }
     pub fn @"hasNext()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNext()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNext()Z", null);
     }
     pub fn @"next()Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"next()Ljava/lang/String;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"next()Ljava/lang/String;", null);
     }
     pub fn @"remove()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"remove()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"remove()V", null);
     }
     pub fn @"hasNext(Ljava/lang/String;)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNext(Ljava/lang/String;)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNext(Ljava/lang/String;)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"next(Ljava/lang/String;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"next(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"next(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNext(Ljava/util/regex/Pattern;)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNext(Ljava/util/regex/Pattern;)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNext(Ljava/util/regex/Pattern;)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"next(Ljava/util/regex/Pattern;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"next(Ljava/util/regex/Pattern;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"next(Ljava/util/regex/Pattern;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextLine()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextLine()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextLine()Z", null);
     }
     pub fn @"nextLine()Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"nextLine()Ljava/lang/String;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"nextLine()Ljava/lang/String;", null);
     }
     pub fn @"findInLine(Ljava/lang/String;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"findInLine(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"findInLine(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"findInLine(Ljava/util/regex/Pattern;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"findInLine(Ljava/util/regex/Pattern;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"findInLine(Ljava/util/regex/Pattern;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"findWithinHorizon(Ljava/lang/String;I)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jint) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"findWithinHorizon(Ljava/lang/String;I)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"findWithinHorizon(Ljava/lang/String;I)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
     }
     pub fn @"findWithinHorizon(Ljava/util/regex/Pattern;I)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jint) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"findWithinHorizon(Ljava/util/regex/Pattern;I)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"findWithinHorizon(Ljava/util/regex/Pattern;I)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
     }
     pub fn @"skip(Ljava/util/regex/Pattern;)Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"skip(Ljava/util/regex/Pattern;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"skip(Ljava/util/regex/Pattern;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"skip(Ljava/lang/String;)Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"skip(Ljava/lang/String;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"skip(Ljava/lang/String;)Ljava/util/Scanner;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextBoolean()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextBoolean()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextBoolean()Z", null);
     }
     pub fn @"nextBoolean()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"nextBoolean()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"nextBoolean()Z", null);
     }
     pub fn @"hasNextByte()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextByte()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextByte()Z", null);
     }
     pub fn @"hasNextByte(I)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextByte(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextByte(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"nextByte()B"(self: *@This(), env: *jui.JNIEnv) !jui.jbyte {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.byte, @ptrCast(jui.jobject, self), methods.@"nextByte()B", null);
+        return env.callMethod(.byte, @ptrCast(self), methods.@"nextByte()B", null);
     }
     pub fn @"nextByte(I)B"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jbyte {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.byte, @ptrCast(jui.jobject, self), methods.@"nextByte(I)B", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.byte, @ptrCast(self), methods.@"nextByte(I)B", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextShort()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextShort()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextShort()Z", null);
     }
     pub fn @"hasNextShort(I)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextShort(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextShort(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"nextShort()S"(self: *@This(), env: *jui.JNIEnv) !jui.jshort {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.short, @ptrCast(jui.jobject, self), methods.@"nextShort()S", null);
+        return env.callMethod(.short, @ptrCast(self), methods.@"nextShort()S", null);
     }
     pub fn @"nextShort(I)S"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jshort {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.short, @ptrCast(jui.jobject, self), methods.@"nextShort(I)S", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.short, @ptrCast(self), methods.@"nextShort(I)S", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextInt()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextInt()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextInt()Z", null);
     }
     pub fn @"hasNextInt(I)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextInt(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextInt(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"processIntegerToken(Ljava/lang/String;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"processIntegerToken(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"processIntegerToken(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"nextInt()I"(self: *@This(), env: *jui.JNIEnv) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.int, @ptrCast(jui.jobject, self), methods.@"nextInt()I", null);
+        return env.callMethod(.int, @ptrCast(self), methods.@"nextInt()I", null);
     }
     pub fn @"nextInt(I)I"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jint {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.int, @ptrCast(jui.jobject, self), methods.@"nextInt(I)I", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.int, @ptrCast(self), methods.@"nextInt(I)I", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextLong()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextLong()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextLong()Z", null);
     }
     pub fn @"hasNextLong(I)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextLong(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextLong(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"nextLong()J"(self: *@This(), env: *jui.JNIEnv) !jui.jlong {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.long, @ptrCast(jui.jobject, self), methods.@"nextLong()J", null);
+        return env.callMethod(.long, @ptrCast(self), methods.@"nextLong()J", null);
     }
     pub fn @"nextLong(I)J"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jlong {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.long, @ptrCast(jui.jobject, self), methods.@"nextLong(I)J", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.long, @ptrCast(self), methods.@"nextLong(I)J", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"processFloatToken(Ljava/lang/String;)Ljava/lang/String;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"processFloatToken(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"processFloatToken(Ljava/lang/String;)Ljava/lang/String;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextFloat()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextFloat()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextFloat()Z", null);
     }
     pub fn @"nextFloat()F"(self: *@This(), env: *jui.JNIEnv) !jui.jfloat {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.float, @ptrCast(jui.jobject, self), methods.@"nextFloat()F", null);
+        return env.callMethod(.float, @ptrCast(self), methods.@"nextFloat()F", null);
     }
     pub fn @"hasNextDouble()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextDouble()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextDouble()Z", null);
     }
     pub fn @"nextDouble()D"(self: *@This(), env: *jui.JNIEnv) !jui.jdouble {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.double, @ptrCast(jui.jobject, self), methods.@"nextDouble()D", null);
+        return env.callMethod(.double, @ptrCast(self), methods.@"nextDouble()D", null);
     }
     pub fn @"hasNextBigInteger()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextBigInteger()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextBigInteger()Z", null);
     }
     pub fn @"hasNextBigInteger(I)Z"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextBigInteger(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextBigInteger(I)Z", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"nextBigInteger()Ljava/math/BigInteger;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"nextBigInteger()Ljava/math/BigInteger;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"nextBigInteger()Ljava/math/BigInteger;", null);
     }
     pub fn @"nextBigInteger(I)Ljava/math/BigInteger;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"nextBigInteger(I)Ljava/math/BigInteger;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"nextBigInteger(I)Ljava/math/BigInteger;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"hasNextBigDecimal()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"hasNextBigDecimal()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"hasNextBigDecimal()Z", null);
     }
     pub fn @"nextBigDecimal()Ljava/math/BigDecimal;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"nextBigDecimal()Ljava/math/BigDecimal;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"nextBigDecimal()Ljava/math/BigDecimal;", null);
     }
     pub fn @"reset()Ljava/util/Scanner;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"reset()Ljava/util/Scanner;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"reset()Ljava/util/Scanner;", null);
     }
     pub fn @"tokens()Ljava/util/stream/Stream;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"tokens()Ljava/util/stream/Stream;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"tokens()Ljava/util/stream/Stream;", null);
     }
     pub fn @"findAll(Ljava/util/regex/Pattern;)Ljava/util/stream/Stream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"findAll(Ljava/util/regex/Pattern;)Ljava/util/stream/Stream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"findAll(Ljava/util/regex/Pattern;)Ljava/util/stream/Stream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"findAll(Ljava/lang/String;)Ljava/util/stream/Stream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"findAll(Ljava/lang/String;)Ljava/util/stream/Stream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"findAll(Ljava/lang/String;)Ljava/util/stream/Stream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"next()Ljava/lang/Object;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"next()Ljava/lang/Object;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"next()Ljava/lang/Object;", null);
     }
     pub fn @"<clinit>()V"(env: *jui.JNIEnv) !void {
         try load(env);

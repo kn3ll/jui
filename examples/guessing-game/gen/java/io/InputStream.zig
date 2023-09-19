@@ -101,7 +101,7 @@ pub const InputStream = opaque {
     pub fn @"<init>()V"(env: *jui.JNIEnv) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>()V", null));
+        return @ptrCast(try env.newObject(class, methods.@"<init>()V", null));
     }
     pub fn @"nullInputStream()Ljava/io/InputStream;"(env: *jui.JNIEnv) !jui.jobject {
         try load(env);

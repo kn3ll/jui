@@ -206,67 +206,67 @@ pub const PrintStream = opaque {
     pub fn @"get_lock_Ljdk/internal/misc/InternalLock;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"lock_Ljdk/internal/misc/InternalLock;");
+        return env.getField(.object, @ptrCast(self), fields.@"lock_Ljdk/internal/misc/InternalLock;");
     }
     pub fn @"get_autoFlush_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"autoFlush_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"autoFlush_Z");
     }
     pub fn @"get_trouble_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"trouble_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"trouble_Z");
     }
     pub fn @"set_trouble_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"trouble_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"trouble_Z", arg);
     }
     pub fn @"get_formatter_Ljava/util/Formatter;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"formatter_Ljava/util/Formatter;");
+        return env.getField(.object, @ptrCast(self), fields.@"formatter_Ljava/util/Formatter;");
     }
     pub fn @"set_formatter_Ljava/util/Formatter;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"formatter_Ljava/util/Formatter;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"formatter_Ljava/util/Formatter;", arg);
     }
     pub fn @"get_charset_Ljava/nio/charset/Charset;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"charset_Ljava/nio/charset/Charset;");
+        return env.getField(.object, @ptrCast(self), fields.@"charset_Ljava/nio/charset/Charset;");
     }
     pub fn @"get_textOut_Ljava/io/BufferedWriter;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"textOut_Ljava/io/BufferedWriter;");
+        return env.getField(.object, @ptrCast(self), fields.@"textOut_Ljava/io/BufferedWriter;");
     }
     pub fn @"set_textOut_Ljava/io/BufferedWriter;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"textOut_Ljava/io/BufferedWriter;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"textOut_Ljava/io/BufferedWriter;", arg);
     }
     pub fn @"get_charOut_Ljava/io/OutputStreamWriter;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.object, @ptrCast(jui.jobject, self), fields.@"charOut_Ljava/io/OutputStreamWriter;");
+        return env.getField(.object, @ptrCast(self), fields.@"charOut_Ljava/io/OutputStreamWriter;");
     }
     pub fn @"set_charOut_Ljava/io/OutputStreamWriter;"(self: *@This(), env: *jui.JNIEnv, arg: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.object, @ptrCast(jui.jobject, self), fields.@"charOut_Ljava/io/OutputStreamWriter;", arg);
+        try env.callField(.object, @ptrCast(self), fields.@"charOut_Ljava/io/OutputStreamWriter;", arg);
     }
     pub fn @"get_closing_Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.getField(.boolean, @ptrCast(jui.jobject, self), fields.@"closing_Z");
+        return env.getField(.boolean, @ptrCast(self), fields.@"closing_Z");
     }
     pub fn @"set_closing_Z"(self: *@This(), env: *jui.JNIEnv, arg: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        try env.callField(.boolean, @ptrCast(jui.jobject, self), fields.@"closing_Z", arg);
+        try env.callField(.boolean, @ptrCast(self), fields.@"closing_Z", arg);
     }
     pub fn @"requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !jui.jobject {
         try load(env);
@@ -281,342 +281,342 @@ pub const PrintStream = opaque {
     pub fn @"<init>(ZLjava/io/OutputStream;)V"(env: *jui.JNIEnv, arg0: jui.jboolean, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(ZLjava/io/OutputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(ZLjava/io/OutputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)V"(env: *jui.JNIEnv, arg0: jui.jboolean, arg1: jui.jobject, arg2: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)}));
     }
     pub fn @"<init>(Ljava/io/OutputStream;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/io/OutputStream;Z)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jboolean) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;Z)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;Z)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/io/OutputStream;ZLjava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jboolean, arg2: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;ZLjava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;ZLjava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)}));
     }
     pub fn @"<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jboolean, arg2: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)}));
     }
     pub fn @"<init>(Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/lang/String;Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/lang/String;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/lang/String;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/io/File;)V"(env: *jui.JNIEnv, arg0: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)}));
     }
     pub fn @"<init>(Ljava/io/File;Ljava/lang/String;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V"(env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject) !*@This() {
         try load(env);
         const class = class_global orelse return error.ClassNotLoaded;
-        return @ptrCast(*@This(), try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
+        return @ptrCast(try env.newObject(class, methods.@"<init>(Ljava/io/File;Ljava/nio/charset/Charset;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)}));
     }
     pub fn @"ensureOpen()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"ensureOpen()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"ensureOpen()V", null);
     }
     pub fn @"flush()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"flush()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"flush()V", null);
     }
     pub fn @"implFlush()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implFlush()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"implFlush()V", null);
     }
     pub fn @"close()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"close()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"close()V", null);
     }
     pub fn @"implClose()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implClose()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"implClose()V", null);
     }
     pub fn @"checkError()Z"(self: *@This(), env: *jui.JNIEnv) !jui.jboolean {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.boolean, @ptrCast(jui.jobject, self), methods.@"checkError()Z", null);
+        return env.callMethod(.boolean, @ptrCast(self), methods.@"checkError()Z", null);
     }
     pub fn @"setError()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"setError()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"setError()V", null);
     }
     pub fn @"clearError()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"clearError()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"clearError()V", null);
     }
     pub fn @"write(I)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"write(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"write(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"implWrite(I)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implWrite(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implWrite(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"write([BII)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray, arg1: jui.jint, arg2: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"write([BII)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"write([BII)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"implWrite([BII)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray, arg1: jui.jint, arg2: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implWrite([BII)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implWrite([BII)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"write([B)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"write([B)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"write([B)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"writeBytes([B)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"writeBytes([B)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"writeBytes([B)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"write([C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"write([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"write([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"implWrite([C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implWrite([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implWrite([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"writeln([C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"writeln([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"writeln([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"implWriteln([C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implWriteln([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implWriteln([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"write(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"write(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"write(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"implWrite(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implWrite(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implWrite(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"writeln(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"writeln(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"writeln(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"implWriteln(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implWriteln(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implWriteln(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"newLine()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"newLine()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"newLine()V", null);
     }
     pub fn @"implNewLine()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implNewLine()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"implNewLine()V", null);
     }
     pub fn @"print(Z)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(Z)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(Z)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jchar) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(I)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(J)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jlong) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(J)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(J)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(F)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jfloat) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(F)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(F)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(D)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jdouble) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(D)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(D)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print([C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"print(Ljava/lang/Object;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"print(Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"print(Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println()V"(self: *@This(), env: *jui.JNIEnv) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println()V", null);
+        return env.callMethod(.void, @ptrCast(self), methods.@"println()V", null);
     }
     pub fn @"println(Z)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jboolean) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(Z)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(Z)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jchar) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(I)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jint) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(I)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(J)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jlong) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(J)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(J)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(F)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jfloat) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(F)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(F)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(D)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jdouble) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(D)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(D)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println([C)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println([C)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(Ljava/lang/String;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(Ljava/lang/String;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"println(Ljava/lang/Object;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"println(Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"println(Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jarray) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
     }
     pub fn @"printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject, arg2: jui.jarray) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jarray) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
     }
     pub fn @"implFormat(Ljava/lang/String;[Ljava/lang/Object;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implFormat(Ljava/lang/String;[Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implFormat(Ljava/lang/String;[Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1)});
     }
     pub fn @"format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject, arg2: jui.jarray) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"implFormat(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)V"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jobject, arg2: jui.jarray) !void {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.void, @ptrCast(jui.jobject, self), methods.@"implFormat(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.void, @ptrCast(self), methods.@"implFormat(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)V", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jint, arg2: jui.jint) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"append(C)Ljava/io/PrintStream;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jchar) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"append(C)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"append(C)Ljava/io/PrintStream;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"charset()Ljava/nio/charset/Charset;"(self: *@This(), env: *jui.JNIEnv) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"charset()Ljava/nio/charset/Charset;", null);
+        return env.callMethod(.object, @ptrCast(self), methods.@"charset()Ljava/nio/charset/Charset;", null);
     }
     pub fn @"append(C)Ljava/lang/Appendable;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jchar) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"append(C)Ljava/lang/Appendable;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"append(C)Ljava/lang/Appendable;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject, arg1: jui.jint, arg2: jui.jint) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0), jui.jvalue.toJValue(arg1), jui.jvalue.toJValue(arg2)});
     }
     pub fn @"append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;"(self: *@This(), env: *jui.JNIEnv, arg0: jui.jobject) !jui.jobject {
         try load(env);
         _ = class_global orelse return error.ClassNotFound;
-        return env.callMethod(.object, @ptrCast(jui.jobject, self), methods.@"append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
+        return env.callMethod(.object, @ptrCast(self), methods.@"append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;", &[_]jui.jvalue{jui.jvalue.toJValue(arg0)});
     }
     pub fn @"<clinit>()V"(env: *jui.JNIEnv) !void {
         try load(env);

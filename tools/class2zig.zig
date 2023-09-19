@@ -380,7 +380,7 @@ fn writeBindingFunction(call_entry: *std.ArrayList(u8), alloc: std.mem.Allocator
     defer descriptor_info.deinit(alloc);
 
     const self = if (method.access_flags.static) "" else "self: *@This(), ";
-    const self2 = if (method.access_flags.static) "class" else "@ptrCast(jui.jobject, self)";
+    const self2 = if (method.access_flags.static) "class" else "@ptrCast(self)";
     const class_assign = if (method.access_flags.static) "const class" else "_";
     const static = if (method.access_flags.static) "Static" else "";
 
@@ -399,7 +399,7 @@ fn writeBindingFunction(call_entry: *std.ArrayList(u8), alloc: std.mem.Allocator
     else
         try call_parameters.appendSlice("null");
 
-    for (descriptor_info.method.parameters) |parameter, i| {
+    for (descriptor_info.method.parameters, 0..) |parameter, i| {
         const type_string = descriptorAsTypeString(parameter.*);
         try std.fmt.format(parameters.writer(), ", arg{}: {s}", .{
             i,
@@ -419,7 +419,7 @@ fn writeBindingFunction(call_entry: *std.ArrayList(u8), alloc: std.mem.Allocator
             \\    pub fn @"{[name]s}{[descriptor]s}"(env: *jui.JNIEnv{[parameters]s}) !*@This() {{
             \\        try load(env);
             \\        const class = class_global orelse return error.ClassNotLoaded;
-            \\        return @ptrCast(*@This(), try env.newObject(class, methods.@"{[name]s}{[descriptor]s}", {[call_parameters]s}));
+            \\        return @ptrCast({[call_parameters]s}));
             \\    }}
             \\
         , .{
@@ -461,7 +461,7 @@ fn writeFieldBindingFunction(call_entry: *std.ArrayList(u8), alloc: std.mem.Allo
     defer descriptor_info.deinit(alloc);
 
     const self = if (field.access_flags.static) "" else "self: *@This(), ";
-    const self2 = if (field.access_flags.static) "class" else "@ptrCast(jui.jobject, self)";
+    const self2 = if (field.access_flags.static) "class" else "@ptrCast(self)";
     const class_assign = if (field.access_flags.static) "const class" else "_";
     const static = if (field.access_flags.static) "Static" else "";
 

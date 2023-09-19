@@ -9,7 +9,7 @@ var reflector: Reflector = undefined;
 fn onLoad(vm: *jui.JavaVM) !jui.jint {
     const version = jui.JNIVersion{ .major = 10, .minor = 0 };
     reflector = Reflector.init(std.heap.page_allocator, try vm.getEnv(version));
-    return @bitCast(jui.jint, version);
+    return @bitCast(version);
 }
 
 fn onUnload(vm: *jui.JavaVM) void {

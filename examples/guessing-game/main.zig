@@ -70,13 +70,13 @@ const System = opaque {
     pub fn getIn(env: *jui.JNIEnv) !*InputStream {
         try load(env);
         const class = class_global orelse return error.ClassNotFound;
-        return @ptrCast(*InputStream, env.getStaticField(.object, class, static_fields.in));
+        return @ptrCast(env.getStaticField(.object, class, static_fields.in));
     }
 
     pub fn getOut(env: *jui.JNIEnv) !*PrintStream {
         try load(env);
         const class = class_global orelse return error.ClassNotFound;
-        return @ptrCast(*PrintStream, env.getStaticField(.object, class, static_fields.out));
+        return @ptrCast(env.getStaticField(.object, class, static_fields.out));
     }
 };
 
@@ -113,8 +113,8 @@ pub fn jniMain(env: *jui.JNIEnv) !void {
     const in = try System.getIn(env);
     const out = try System.getOut(env);
 
-    var scanner = try Scanner.@"<init>(Ljava/io/InputStream;)V"(env, @ptrCast(jui.jobject, in));
-    try out.@"print(Ljava/lang/Object;)V"(env, @ptrCast(jui.jobject, scanner));
+    var scanner = try Scanner.@"<init>(Ljava/io/InputStream;)V"(env, @ptrCast(in));
+    try out.@"print(Ljava/lang/Object;)V"(env, @ptrCast(scanner));
 
     const int = try scanner.@"nextInt()I"(env);
     try out.@"print(I)V"(env, int);

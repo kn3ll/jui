@@ -10,39 +10,35 @@ pub fn build(b: *std.build.Builder) void {
 
     // Standard release options allow the person running `zig build` to select
     // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
-    const mode = b.standardReleaseOptions();
+    const mode = b.standardOptimizeOption(.{});
 
     //Example
     {
-        const lib = b.addSharedLibrary("jni_example", "test/demo.zig", .unversioned);
+        const lib = b.addSharedLibrary(.{.name = "jni_example", .root_source_file = .{ .path = "test/demo.zig"}, .target = target, .optimize = mode});
 
         if (@hasField(std.build.LibExeObjStep, "use_stage1"))
             lib.use_stage1 = true;
 
-        lib.addPackagePath("jui", "src/jui.zig");
+        lib.addModule("jui", b.addModule("jui", .{ .source_file = .{ .path = "src/jui.zig"}}));
 
-        lib.setTarget(target);
-        lib.setBuildMode(mode);
-        lib.install();
+        b.installArtifact(lib);
     }
 
     const java_home = b.env_map.get("JAVA_HOME") orelse @panic("JAVA_HOME not defined.");
     const libjvm_path = if (builtin.os.tag == .windows) "/lib" else "/lib/server";
 
     {
-        const exe = b.addExecutable("class2zig", "tools/class2zig.zig");
+        const exe = b.addExecutable(.{.name = "class2zig", .root_source_file = .{ .path = "tools/class2zig.zig"}, .target = target, .optimize = mode});
 
         if (@hasField(std.build.LibExeObjStep, "use_stage1"))
             exe.use_stage1 = true;
 
-        exe.addPackagePath("jui", "src/jui.zig");
-        exe.addPackagePath("cf", "dep/cf/cf.zig");
+        exe.addModule("jui", b.addModule("jui", .{ .source_file = .{ .path = "src/jui.zig"}}));
+        exe.addModule("cf", b.addModule("jui", .{ .source_file = .{ .path = "dep/cf/cf.zig"}}));
 
-        exe.setTarget(target);
-        exe.setBuildMode(mode);
-        exe.install();
+        b.installArtifact(exe);
 
-        const run_cmd = exe.run();
+        const run_cmd = b.addRunArtifact(exe);
         run_cmd.step.dependOn(b.getInstallStep());
         if (b.args) |args| {
             run_cmd.addArgs(args);
@@ -54,22 +50,20 @@ pub fn build(b: *std.build.Builder) void {
 
     //Example
     {
-        const exe = b.addExecutable("guessing_game", "examples/guessing-game/main.zig");
+        const exe = b.addExecutable(.{.name = "guessing_game", .root_source_file = .{ .path = "examples/guessing-game/main.zig"}, .target = target, .optimize = mode});
 
         if (@hasField(std.build.LibExeObjStep, "use_stage1"))
             exe.use_stage1 = true;
 
-        exe.addPackagePath("jui", "src/jui.zig");
+        exe.addModule("jui", b.addModule("jui", .{ .source_file = .{ .path = "src/jui.zig"}}));
 
-        exe.addLibraryPath(b.pathJoin(&.{ java_home, libjvm_path }));
+        exe.addLibraryPath(.{ .path = b.pathJoin(&.{ java_home, libjvm_path })});
         exe.linkSystemLibrary("jvm");
         exe.linkLibC();
 
-        exe.setTarget(target);
-        exe.setBuildMode(mode);
-        exe.install();
+        b.installArtifact(exe);
 
-        const run_cmd = exe.run();
+        const run_cmd = b.addRunArtifact(exe);
         run_cmd.step.dependOn(b.getInstallStep());
         if (b.args) |args| {
             run_cmd.addArgs(args);
@@ -81,10 +75,10 @@ pub fn build(b: *std.build.Builder) void {
 
     // Tests (it requires a JDK installed)
     {
-        const main_tests = b.addTest("src/jui.zig");
+        const main_tests = b.addTest(.{.root_source_file = .{.path = "src/jui.zig"}, .optimize = mode});
 
         if (@hasDecl(@TypeOf(main_tests.*), "addLibraryPath")) {
-            main_tests.addLibraryPath(b.pathJoin(&.{ java_home, libjvm_path }));
+            main_tests.addLibraryPath(.{.path = b.pathJoin(&.{ java_home, libjvm_path })});
         } else {
             // Deprecated on zig 0.10
             main_tests.addLibPath(b.pathJoin(&.{ java_home, libjvm_path }));
@@ -122,14 +116,14 @@ pub fn build(b: *std.build.Builder) void {
             // and for some reason it is not needed on Linux.
             main_tests.setBuildMode(.ReleaseFast);
         } else {
-            main_tests.setBuildMode(mode);
+//             main_tests.setBuildMode(mode);
         }
 
         var test_step = b.step("test", "Run library tests");
         test_step.dependOn(&main_tests.step);
 
         const argv: []const []const u8 = &.{ b.pathJoin(&.{ java_home, "/bin/javac" ++ if (builtin.os.tag == .windows) ".exe" else "" }), "test/src/com/jui/TypesTest.java" };
-        _ = b.execFromStep(argv, test_step) catch |err| {
+        _ = b.execAllowFail(argv, undefined, .Inherit) catch |err| {
             std.debug.panic("Failed to compile Java test files: {}", .{err});
         };
     }
