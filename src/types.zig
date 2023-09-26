@@ -1354,9 +1354,9 @@ pub const JNIEnv = extern struct {
     /// This function allows native code to access the same memory region that is accessible to Java code via the buffer object.
     pub fn getDirectBufferAddress(self: *Self, buf: jobject) []u8 {
         const ptr = self.interface.GetDirectBufferAddress(self, buf);
-        const len: usize = @as(usize, self.interface.GetDirectBufferCapacity(self, buf));
+        const len: usize = @intCast(self.interface.GetDirectBufferCapacity(self, buf));
 
-        return @as([*]u8, @alignCast(ptr))[0..len];
+        return @as([*]u8, @alignCast(@ptrCast(ptr)))[0..len];
     }
 
     pub const NewDirectByteBufferError = error{Unknown};
@@ -2135,7 +2135,7 @@ test "newObject" {
         try testing.expect(fieldId != null);
 
         var value = env.getField(.boolean, obj, fieldId);
-        try testing.expectEqual(@intCast(1), value);
+        try testing.expectEqual(@as(jchar, 1), value);
     }
 
     // Byte constructor
@@ -2151,7 +2151,7 @@ test "newObject" {
         try testing.expect(fieldId != null);
 
         var value = env.getField(.byte, obj, fieldId);
-        try testing.expectEqual(@intCast(1), value);
+        try testing.expectEqual(@as(jbyte, 1), value);
     }
 
     // Char constructor
@@ -2167,7 +2167,7 @@ test "newObject" {
         try testing.expect(fieldId != null);
 
         var value = env.getField(.char, obj, fieldId);
-        try testing.expectEqual(@intCast(1), value);
+        try testing.expectEqual(@as(jchar, 1), value);
     }
 
     // Short constructor
@@ -2183,7 +2183,7 @@ test "newObject" {
         try testing.expect(fieldId != null);
 
         var value = env.getField(.short, obj, fieldId);
-        try testing.expectEqual(@intCast(1), value);
+        try testing.expectEqual(@as(jshort, 1), value);
     }
 
     // Int constructor
@@ -2199,7 +2199,7 @@ test "newObject" {
         try testing.expect(fieldId != null);
 
         var value = env.getField(.int, obj, fieldId);
-        try testing.expectEqual(@intCast(1), value);
+        try testing.expectEqual(@as(jint, 1), value);
     }
 
     // Long constructor
@@ -2215,7 +2215,7 @@ test "newObject" {
         try testing.expect(fieldId != null);
 
         var value = env.getField(.long, obj, fieldId);
-        try testing.expectEqual(@intCast(1), value);
+        try testing.expectEqual(@as(jlong, 1), value);
     }
 
     // Float constructor
@@ -2968,13 +2968,13 @@ test "string unicode: newString, getStringLength, getStringChars and releaseStri
     try testing.expect(str != null);
     defer env.deleteReference(.local, str);
 
-    var len = env.getStringLength(str);
-    try testing.expectEqual(content.len, @intCast(len));
+    var len: usize = @intCast(env.getStringLength(str));
+    try testing.expectEqual(content.len, len);
 
     var ret = try env.getStringChars(str);
     defer env.releaseStringChars(str, ret.chars);
 
-    try testing.expectEqualSlices(u16, content, ret.chars[0..@intCast(len)]);
+    try testing.expectEqualSlices(u16, content, ret.chars[0..len]);
 }
 
 test "string utf: newStringUTF, getStringUTFLength, getStringUTFChars and releaseStringUTFChars" {
@@ -2985,13 +2985,13 @@ test "string utf: newStringUTF, getStringUTFLength, getStringUTFChars and releas
     try testing.expect(str != null);
     defer env.deleteReference(.local, str);
 
-    var len = env.getStringUTFLength(str);
-    try testing.expectEqual(content.len, @intCast(len));
+    var len: usize = @intCast(env.getStringUTFLength(str));
+    try testing.expectEqual(content.len, len);
 
     var ret = try env.getStringUTFChars(str);
     defer env.releaseStringUTFChars(str, ret.chars);
 
-    try testing.expectEqualSlices(u8, content, ret.chars[0..@intCast(len)]);
+    try testing.expectEqualSlices(u8, content, ret.chars[0..len]);
 }
 
 test "getStringRegion" {
@@ -3030,13 +3030,13 @@ test "getStringCritical" {
     try testing.expect(str != null);
     defer env.deleteReference(.local, str);
 
-    var len = env.getStringLength(str);
-    try testing.expectEqual(content.len, @intCast(len));
+    var len: usize = @intCast(env.getStringLength(str));
+    try testing.expectEqual(content.len, len);
 
     var region = try env.getStringCritical(str);
     defer env.releaseStringCritical(str, region.chars);
 
-    try testing.expectEqualSlices(u16, content, region.chars[0..@intCast(len)]);
+    try testing.expectEqualSlices(u16, content, region.chars[0..len]);
 }
 
 test "getDirectBufferAddress" {
@@ -3087,7 +3087,7 @@ test "newDirectByteBuffer" {
     var direct_buffer = blk: {
         var array: [32]u8 = undefined;
         var value: u8 = 32;
-        for (array) |*byte| {
+        for (&array) |*byte| {
             value -= 1;
             byte.* = value;
         }
@@ -3138,7 +3138,7 @@ test "newObjectArray, setObjectArrayElement and getObjectArrayElement" {
 
         var index: u32 = 0;
         while (index < 32) : (index += 1) {
-            var obj = try env.newObject(testClass, ctor, &[_]jvalue{jvalue.toJValue(@intCast(index))});
+            var obj = try env.newObject(testClass, ctor, &[_]jvalue{jvalue.toJValue(@as(jint, @intCast(index)))});
             try testing.expect(obj != null);
             defer env.deleteReference(.local, obj);
 
@@ -3150,14 +3150,14 @@ test "newObjectArray, setObjectArrayElement and getObjectArrayElement" {
         var fieldId = try env.getFieldId(testClass, "intValue", "I");
         try testing.expect(fieldId != null);
 
-        var index: u32 = 0;
+        var index: i32 = 0;
         while (index < 32) : (index += 1) {
             var obj = try env.getObjectArrayElement(array, @intCast(index));
             try testing.expect(obj != null);
             defer env.deleteReference(.local, obj);
 
             var value = env.getField(.int, obj, fieldId);
-            try testing.expectEqual(index, @intCast(value));
+            try testing.expectEqual(index, @as(i32, value));
         }
     }
 }
@@ -3193,7 +3193,7 @@ test "newPrimitiveArray, getArrayLength, getPrimitiveArrayElements" {
             defer env.deleteReference(.local, array);
 
             var len = env.getArrayLength(array);
-            try testing.expectEqual(@intCast(32), len);
+            try testing.expectEqual(@as(jsize, 32), len);
 
             // Change the array
             {
@@ -3238,7 +3238,7 @@ test "newPrimitiveArray, getArrayLength, getPrimitiveArrayElements" {
 
                 try env.getPrimitiveArrayRegion(native_type, array, 5, 10, &buffer);
 
-                for (buffer, 0..) |*element, i| {
+                for (&buffer, 0..) |*element, i| {
                     try testing.expectEqual(cast(native_type, i + 5), element.*);
                     element.* = cast(native_type, i);
                 }
